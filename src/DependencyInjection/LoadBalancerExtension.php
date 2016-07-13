@@ -35,7 +35,7 @@ class LoadBalancerExtension extends Extension
 
         if (count($config['hosts'])) {
             $loadbalancer = $container->getDefinition('nbn_loadbalancer.loadbalancer');
-            foreach($config['hosts'] as $id => $hostConfiguration) {
+            foreach ($config['hosts'] as $id => $hostConfiguration) {
                 $loadbalancer->addMethodCall('addHostByConfiguration', [$id, $hostConfiguration['url'], $hostConfiguration['settings']]);
             }
         }
